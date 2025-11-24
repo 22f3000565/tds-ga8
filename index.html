@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Reveal.js core (CDN) -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/solarized.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/solarized.css" id="theme">
 
-  <!-- Highlight.js default style for code highlighting -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+
 
   <style>
     /* small visual tweaks */
@@ -158,7 +158,29 @@ function projectRevenue(base, growthPct, years=3){
       // optional config: you can add extensions if desired
     };
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+  <script type="module">
+  import Reveal from "https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.esm.js";
+  import Markdown from "https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/plugin/markdown/markdown.esm.js";
+  import Highlight from "https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/plugin/highlight/highlight.esm.js";
+  import Notes from "https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/plugin/notes/notes.esm.js";
+
+  Reveal.initialize({
+    hash: true,
+    plugins: [ Markdown, Highlight, Notes ],
+    transition: "slide"
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- MathJax -->
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$']] }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
 </body>
 </html>
