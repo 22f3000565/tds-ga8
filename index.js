@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Quarterly Earnings — Reveal.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Reveal.js core (CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/solarized.css" id="theme">
+
+  <!-- Highlight.js default style for code highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+
+  <style>
+    /* small visual tweaks */
+    .email { font-size: 0.9rem; opacity: 0.9; }
+    .small-note { font-size: 0.85rem; opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings Report — Q{Quarter}</h1>
+        <p class="small-note">Prepared by: Technical Consulting Team</p>
+        <p class="email">Contact: 22f3000565@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Welcome the stakeholders, quick agenda overview. Mention that code snippets and formulas are included in the deck.
+        </aside>
+      </section>
+
+      <!-- Markdown slide: uses data-markdown -->
+      <section data-markdown>
+<!--
+## Executive Summary (Markdown)
+
+- **Revenue:** Growth vs previous quarter  
+- **EPS:** Earnings per share analysis  
+- **Key drivers:**
+  1. Product A expansion
+  2. Cost optimization
+  3. FX tailwinds
+
+> For more detail, see the financial appendix slides.
+-->
+      </section>
+
+      <!-- Fragment animation example -->
+      <section>
+        <h2>Highlights</h2>
+        <ul>
+          <li class="fragment">Revenue ↑ 8% QoQ</li>
+          <li class="fragment">Operating margin ↑ 120 bps</li>
+          <li class="fragment">EPS beats estimates</li>
+        </ul>
+        <aside class="notes">
+          Click through each fragment to reveal highlights. Emphasize margin improvement.
+        </aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Sample: Revenue growth calculation (Python)</h2>
+        <pre><code class="language-python">
+# Compute QoQ growth
+prev = 125.4  # previous quarter revenue (in millions)
+curr = 135.6  # current quarter revenue (in millions)
+growth_pct = ((curr - prev) / prev) * 100
+print(f"QoQ revenue growth: {growth_pct:.2f}%")
+        </code></pre>
+        <aside class="notes">
+          Walk through the code — simple example to show reproducibility and transparency.
+        </aside>
+      </section>
+
+      <!-- Math slide with financial formula -->
+      <section>
+        <h2>Financial Formula</h2>
+        <p>
+          Free Cash Flow to Firm (FCFF) — simplified:
+        </p>
+        <p>$$
+          \text{FCFF} = \text{EBIT} \times (1 - t) + \text{Depreciation} - \text{CapEx} - \Delta\text{Working Capital}
+        $$</p>
+        <p class="small-note">Where \(t\) = tax rate</p>
+        <aside class="notes">
+          Explain each term and how FCFF drives valuation and forecasting.
+        </aside>
+      </section>
+
+      <!-- Another slide with fragments + code block -->
+      <section>
+        <h2>Scenario Sensitivity</h2>
+        <p class="fragment">Base case: Revenue growth 8%</p>
+        <p class="fragment">Upside: Revenue growth 12%</p>
+        <p class="fragment">Downside: Revenue growth 4%</p>
+
+        <h3>Scenario revenue projection (JS snippet)</h3>
+        <pre><code class="language-javascript">
+function projectRevenue(base, growthPct, years=3){
+  let projections = [];
+  let current = base;
+  for(let i=0;i<years;i++){
+    current = current * (1 + growthPct/100);
+    projections.push(current);
+  }
+  return projections;
+}
+        </code></pre>
+        <aside class="notes">
+          Use fragments to step through scenarios; the JS snippet is illustrative for front-end dashboards.
+        </aside>
+      </section>
+
+      <!-- Appendix / Closing slide -->
+      <section>
+        <h2>Appendix & Next Steps</h2>
+        <ol>
+          <li class="fragment">Detailed financial model (separate file)</li>
+          <li class="fragment">Investor Q&A session</li>
+          <li class="fragment">Action items & owners</li>
+        </ol>
+        <p class="small-note">Contact: 22f3000565@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Close by thanking stakeholders and opening to questions.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script type="module" src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.esm.js"></script>
+  <script type="module">
+    import Reveal from 'https://unpkg.com/reveal.js@4.5.0/dist/reveal.esm.js';
+    import Markdown from 'https://unpkg.com/reveal.js@4.5.0/dist/plugin/markdown/markdown.esm.js';
+    import Highlight from 'https://unpkg.com/reveal.js@4.5.0/dist/plugin/highlight/highlight.esm.js';
+    import Notes from 'https://unpkg.com/reveal.js@4.5.0/dist/plugin/notes/notes.esm.js';
+
+    Reveal.initialize({
+      hash: true,
+      plugins: [ Markdown, Highlight, Notes ],
+      // Highlight plugin will auto-run highlight.js
+      transition: 'slide'
+    });
+  </script>
+
+  <!-- Highlight.js (used by plugin) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+  <!-- MathJax for equations (renders LaTeX in $$...$$). Using v2 for broad compatibility) -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$']] },
+      // optional config: you can add extensions if desired
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+</body>
+</html>
