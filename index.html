@@ -1,20 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Quarterly Earnings Presentation</title>
-
+  <title>Quarterly Earnings Report</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Reveal.js core CSS -->
-  <link rel="stylesheet" href="https://esm.run/reveal.js@5/dist/reveal.css">
-  <link rel="stylesheet" href="https://esm.run/reveal.js@5/dist/theme/black.css">
+  <!-- RevealJS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
 
-  <!-- Syntax highlighting -->
+  <!-- Highlight.js syntax highlighting -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 
   <style>
-    .email { font-size: 0.8rem; opacity: 0.8; margin-top: 15px; }
+    .email {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -25,95 +28,83 @@
     <!-- Title Slide -->
     <section>
       <h1>Quarterly Earnings Report</h1>
-      <h3>Modern Interactive Presentation</h3>
       <p class="email">Prepared by: 22f3000565@ds.study.iitm.ac.in</p>
-
       <aside class="notes">
-        Welcome stakeholders — quick overview of the quarter.
+        Welcome the audience and introduce the agenda.
       </aside>
     </section>
 
     <!-- Markdown Slide -->
     <section data-markdown>
-      <textarea data-template>
+      <script type="text/template">
 ## Executive Summary (Markdown)
 
-- **Revenue:** Strong YoY growth  
-- **EPS:** Better than estimates  
-- **Drivers:**  
-  - Market expansion  
-  - Cost optimization  
-  - FX tailwinds  
+- Revenue growth improved
+- EPS exceeded expectations  
+- Customer acquisition up 12%
 
----
-      </textarea>
+> Detailed metrics available in appendix.
+      </script>
     </section>
 
     <!-- Fragments -->
     <section>
       <h2>Key Highlights</h2>
       <ul>
-        <li class="fragment">Revenue up 8%</li>
-        <li class="fragment">Operating margin improved</li>
-        <li class="fragment">Customer base expanded</li>
+        <li class="fragment">Revenue ↑ 8%</li>
+        <li class="fragment">Operating Margins ↑</li>
+        <li class="fragment">EPS Beat Analysts' Estimates</li>
       </ul>
-
       <aside class="notes">
-        Use fragments to reveal points gradually.
+        Discuss each highlight one-by-one.
       </aside>
     </section>
 
-    <!-- Code Highlighting -->
+    <!-- Code Snippet -->
     <section>
-      <h2>Revenue Calculation Code</h2>
-
+      <h2>Revenue Growth Calculation</h2>
       <pre><code class="language-python">
-prev = 120.5
-curr = 132.2
+prev = 120.0
+curr = 135.0
 growth = ((curr - prev) / prev) * 100
-print("Growth:", growth, "%")
+print("Revenue Growth = ", growth)
       </code></pre>
-
-      <aside class="notes">
-        Python example showing QoQ revenue growth.
-      </aside>
     </section>
 
-    <!-- MathJax -->
+    <!-- Math Slide -->
     <section>
       <h2>Financial Formula</h2>
+      <p>Free Cash Flow:</p>
 
-      <p>$$ FCFF = EBIT(1 - t) + Depreciation - CapEx - \Delta WC $$</p>
+      <p>
+      $$ FCFF = EBIT (1 - t) + Depreciation - CapEx - \Delta WC $$
+      </p>
 
       <aside class="notes">
-        Standard Free Cash Flow formula for valuation.
+        Explain tax impact and working capital adjustments.
       </aside>
     </section>
 
   </div>
 </div>
 
-<!-- Reveal.js ES Modules (CORS-safe) -->
-<script type="module">
-  import Reveal from "https://esm.run/reveal.js@5";
-  import Markdown from "https://esm.run/reveal.js@5/plugin/markdown/markdown.esm.js";
-  import Highlight from "https://esm.run/reveal.js@5/plugin/highlight/highlight.esm.js";
-  import Notes from "https://esm.run/reveal.js@5/plugin/notes/notes.esm.js";
+<!-- RevealJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
 
-  Reveal.initialize({
-    hash: true,
-    plugins: [Markdown, Highlight, Notes],
-    slideNumber: true
-  });
-</script>
+<!-- Plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
 
 <!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML"></script>
+
 <script>
-  window.MathJax = {
-    tex: {inlineMath: [['$','$'], ['\\(','\\)']]}
-  };
+  Reveal.initialize({
+    hash: true,
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+  });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </body>
 </html>
